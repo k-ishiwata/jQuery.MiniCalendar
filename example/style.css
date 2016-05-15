@@ -1,0 +1,180 @@
+@charset "UTF-8";
+
+*::after,
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body {
+	background: #EFECE5;
+	font-size: 14px;
+	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+}
+
+#wrap {
+	padding: 0 5%;
+}
+
+
+/* ========================================
+ * #mini-calendar
+ * ========================================*/
+#mini-calendar .calendar-year-month {
+	text-align: center;
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+#mini-calendar table {
+	width: 100%;
+	border-spacing: 0;
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-bottom: 0;
+	line-height: 1.5;
+	border-collapse: separate;
+	border-radius: 7px;
+}
+
+/* radius */
+#mini-calendar th:first-child {
+	border-top-left-radius: 7px;
+}
+#mini-calendar th:last-child {
+	border-top-right-radius: 7px;
+}
+#mini-calendar tr:last-child td:first-child {
+	border-bottom-left-radius: 7px;
+}
+#mini-calendar tr:last-child td:last-child {
+	border-bottom-right-radius: 7px;
+}
+#mini-calendar th,
+#mini-calendar td {
+	background: #fff;
+	padding: 3px;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+#mini-calendar th {
+	color: #fff;
+	background: #4F616B;
+	vertical-align: top;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+/*
+#mini-calendar th.calendar-sun {
+	color: #DF0D2D;
+	background: #F8E4E4;
+}
+#mini-calendar th.calendar-sat {
+	color: #2574D3;
+	background: #E2F3FC;
+}
+*/
+#mini-calendar td {
+	width: 14.3%;
+	height: 100px;
+	vertical-align: top;
+}
+#mini-calendar td.calendar-day-off {
+	background: #F4F3F2;
+	color: #555;
+}
+#mini-calendar td.calendar-holiday,
+#mini-calendar td.calendar-sun {
+	color: #CE2727;
+	background: #FCF3F3;
+}
+#mini-calendar td.calendar-sat {
+	color: #54AFC8;
+	background: #F5FBFE;
+}
+
+#mini-calendar .calendar-day-number {
+	font-style: normal;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	display: block;
+	padding: 0 3px;
+	line-height: 1.2;
+}
+#mini-calendar td.calendar-holiday .day,
+#mini-calendar td.calendar-sun .day {
+	color: #DF0D2D;
+}
+#mini-calendar td.calendar-sat .day {
+	color: #2574D3;
+}
+#mini-calendar td span {
+	font-size: 11px;
+	line-height: 1.3;
+	display: block;
+}
+#mini-calendar [class*=calender-label] {
+	font-size: 11px;
+	line-height: 1.3;
+	color: #000;
+	background: #FCEBCF;
+	border: solid 1px #D2AC8E;
+	display: block;
+	padding: 3px;
+	margin-top: 3px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+}
+#mini-calendar td span.calender-label-red {
+	background-color: #FCCFD1;
+	border-color: #D28EA6;
+}
+#mini-calendar td span.calender-label-blue {
+	background-color: #CFE4FC;
+	border-color: #8E9BD2;
+}
+#mini-calendar td span.calender-label-green {
+	background-color: #E5FCCF;
+	border-color: #99C170;
+}
+/* 何もない日 */
+#mini-calendar td.calendar-none {
+	background: #FBFAF7;
+}
+#mini-calendar td.calendar-today {
+	background: #FEFBDA;
+}
+
+
+
+/* モバイル用縦型カレンダー */
+#mini-calendar-vertical table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 4px solid #B89970;
+	margin-bottom: 0;
+	line-height: 1.5;
+}
+#mini-calendar-vertical table th {
+	width: 10%;
+	padding: 7px 5px 7px 10px;
+	/*width: 50px;*/
+	font-size: 129%;
+	white-space: nowrap;
+	font-weight: normal;
+}
+#mini-calendar-vertical table td {
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+}
+#mini-calendar-vertical table th span {
+	font-size: 77%;
+	margin-left: 4px;
+}
+
+
