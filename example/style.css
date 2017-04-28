@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 }
 body {
+	color: #333;
 	background: #EFECE5;
 	font-size: 14px;
 	font-family: 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
@@ -16,6 +17,11 @@ body {
 	padding: 0 5%;
 }
 
+@media screen and (max-width: 600px) {
+	#wrap {
+		padding: 0 5px;
+	}
+}
 
 /* ========================================
  * #mini-calendar
@@ -24,6 +30,7 @@ body {
 	text-align: center;
 	font-size: 32px;
 	margin-bottom: 20px;
+	font-weight: bold;
 }
 #mini-calendar table {
 	width: 100%;
@@ -33,26 +40,11 @@ body {
 	margin-bottom: 0;
 	line-height: 1.5;
 	border-collapse: separate;
-	border-radius: 7px;
-}
-
-/* radius */
-#mini-calendar th:first-child {
-	border-top-left-radius: 7px;
-}
-#mini-calendar th:last-child {
-	border-top-right-radius: 7px;
-}
-#mini-calendar tr:last-child td:first-child {
-	border-bottom-left-radius: 7px;
-}
-#mini-calendar tr:last-child td:last-child {
-	border-bottom-right-radius: 7px;
 }
 #mini-calendar th,
 #mini-calendar td {
 	background: #fff;
-	padding: 3px;
+	padding: 7px;
 	border-bottom: 1px solid #ccc;
 	border-right: 1px solid #ccc;
 }
@@ -63,6 +55,9 @@ body {
 	padding-top: 7px;
 	padding-bottom: 7px;
 }
+
+
+
 /*
 #mini-calendar th.calendar-sun {
 	color: #DF0D2D;
@@ -148,33 +143,81 @@ body {
 	background: #FEFBDA;
 }
 
+@media screen and (max-width: 600px) {
+	#mini-calendar thead {
+		display: none;
+	}
+	#mini-calendar th,
+	#mini-calendar td {
+		display: block;
+		width: 100%;
+		padding: 0;
+	}
+	#mini-calendar td {
+		height: auto;
+		display: -webkit-flex;
+		display: flex;
+	}
+	#mini-calendar .calendar-none {
+		display: none
+	}
 
+	#mini-calendar .calendar-labels {
+		padding: 5px;
+	}
+	#mini-calendar [class*=calender-label] {
+		display: inline-block;
+		padding: 5px;
+		margin-top: 0;
+		margin-right: 5px;
+		font-size: 12px;
+	}
 
-/* モバイル用縦型カレンダー */
-#mini-calendar-vertical table {
-	width: 100%;
-	border-collapse: collapse;
-	border-spacing: 0;
-	border: 4px solid #B89970;
-	margin-bottom: 0;
-	line-height: 1.5;
-}
-#mini-calendar-vertical table th {
-	width: 10%;
-	padding: 7px 5px 7px 10px;
-	/*width: 50px;*/
-	font-size: 129%;
-	white-space: nowrap;
-	font-weight: normal;
-}
-#mini-calendar-vertical table td {
-	width: auto;
-	height: auto;
-	vertical-align: middle;
-}
-#mini-calendar-vertical table th span {
-	font-size: 77%;
-	margin-left: 4px;
-}
+	/* 日付 */
+	#mini-calendar td .calendar-day-number {
+		font-weight: normal;
+		padding: 7px;
+		font-size: 18px;
+		display: block;
+		background: #f2e6cd;
+		margin-bottom: 0;
+		width: 75px;
+		height: auto;
+	}
+	#mini-calendar td.calendar-holiday .calendar-day-number,
+	#mini-calendar td.calendar-sun .calendar-day-number {
+		background: #f8c7c7;
+	}
 
+	#mini-calendar td.calendar-sat .calendar-day-number {
+		background: #c8ebfe;
+	}
 
+	/* モバイル用曜日を追加 */
+	#mini-calendar td i:after {
+		font-size: 12px;
+		position: relative;
+		left: -5px;
+	}
+	#mini-calendar td:nth-child(1) i:after {
+		content: "（日）";
+	}
+	#mini-calendar td:nth-child(2) i:after {
+		content: "（月）";
+	}
+	#mini-calendar td:nth-child(3) i:after {
+		content: "（火）";
+	}
+	#mini-calendar td:nth-child(4) i:after {
+		content: "（水）";
+	}
+	#mini-calendar td:nth-child(5) i:after {
+		content: "（木）";
+	}
+	#mini-calendar td:nth-child(6) i:after {
+		content: "（金）";
+	}
+	#mini-calendar td:nth-child(7) i:after {
+		content: "（土）";
+	}
+}

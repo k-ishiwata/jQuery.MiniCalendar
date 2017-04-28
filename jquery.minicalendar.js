@@ -109,7 +109,7 @@
         // 曜日classを割り当てる
         if (col === 0) tmpId += ' class="calendar-sun"';
         if (col === 6) tmpId += ' class="calendar-sat"';
-        return '<td' + tmpId + '><i class="calendar-day-number">' + count + '</i>'+dayText+'</td>';
+        return '<td' + tmpId + '><i class="calendar-day-number">' + count + '</i><div class="calendar-labels">' + dayText + '</div></td>';
       }
 
       //今日の日付をマーク
@@ -134,7 +134,8 @@
           type = '-' + this.events[i].type;
         }
         $(this.ele)
-            .find('#' + dateID).append('<span class="calender-label'+ type +'">'+getText.val()+'</span>');
+               .find('#' + dateID + ' .calendar-labels').append('<span class="calender-label' + type + '">' + getText.val() + '</span>');
+
       }
 
       // 休日
