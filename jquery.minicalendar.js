@@ -1,6 +1,6 @@
 /*
  * jQuery Mini Calendar
- * https://github.com/blueimp/jQuery-File-Upload
+ * https://github.com/k-ishiwata/jQuery.MiniCalendar
  *
  * Copyright 2016, k.ishiwata
  * http://www.webopixel.net
